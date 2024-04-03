@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Users App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+        }
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Users App</h1>
+        <h2>Example Usage with cURL</h2>
+        <p>Create a new user:</p>
+        <pre>
+            curl -X POST -i http://localhost:4567/users -d "firstname=value1" -d "lastname=value2" -d "age=30" -d "password=123456" -d "email=user@example.com"
+        </pre>
+        <p>Retrieve all users:</p>
+        <pre>
+            curl http://localhost:4567/users
+        </pre>
+        <p>Log in:</p>
+        <pre>
+            curl -X POST -i http://localhost:4567/sign_in -d "email=user@example.com" -d "password=123456"
+        </pre>
+        <p>Update user's password:</p>
+        <pre>
+            curl -X PUT -i http://localhost:4567/users -d "password=new_password"
+        </pre>
+        <p>Sign out:</p>
+        <pre>
+            curl -X DELETE -i http://localhost:4567/sign_out
+        </pre>
+        <p>Delete user:</p>
+        <pre>
+            curl -X DELETE -i http://localhost:4567/users
+        </pre>
+    </div>
+</body>
+</html>
